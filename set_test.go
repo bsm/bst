@@ -1,6 +1,7 @@
 package bst
 
 import (
+	"math/rand"
 	"testing"
 
 	. "github.com/onsi/ginkgo"
@@ -110,4 +111,27 @@ var _ = Describe("NewSet", func() {
 func TestSuite(t *testing.T) {
 	RegisterFailHandler(Fail)
 	RunSpecs(t, "set")
+}
+
+func BenchmarkSet_10(b *testing.B) {
+	benchmark(b, 10)
+}
+func BenchmarkSet_1000(b *testing.B) {
+	benchmark(b, 1000)
+}
+func BenchmarkSet_100000(b *testing.B) {
+	benchmark(b, 100000)
+}
+
+func benchmark(b *testing.B, n int) {
+	max := n * 3
+	set := NewSet(n)
+	for i := 0; i < n; i++ {
+		set.Add(Int(rand.Intn(max)))
+	}
+
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		_ = set.Exists(Int(rand.Intn(max)))
+	}
 }

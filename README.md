@@ -1,41 +1,18 @@
-# BST - Binary-Search-Trees [![Build Status](https://travis-ci.org/bsm/bst.png?branch=master)](https://travis-ci.org/bsm/bst)
+# bst set/map
 
-Generic Set and Map implementations using binary-search-trees.
+[![Build Status](https://travis-ci.org/bsm/bst.png?branch=master)](https://travis-ci.org/bsm/bst)
+[![GoDoc](https://godoc.org/github.com/bsm/bst?status.png)](http://godoc.org/github.com/bsm/bst)
 
-### Example
+Fast and generic Set and Map implementations using binary-search-trees.
 
-```go
-package main
+### Documentation
 
-import (
-  "fmt"
-
-  "github.com/bsm/intset"
-)
-
-func main() {
-  // Create a new set
-  set := intset.New(3)
-  set.Add(2) // true
-  set.Add(1) // true
-  set.Add(3) // true
-  set.Add(1) // false
-
-  fmt.Println(set.Slice()) // [1, 2, 3]
-
-  set.Exists(1) // true
-  set.Exists(4) // false
-
-  set.Remove(1) // true
-  set.Remove(4) // false
-  fmt.Println(set.Slice()) // [2, 3]
-}
-```
+Full documentation and examples are available on [GoDoc](http://godoc.org/github.com/bsm/bst)
 
 ### Licence
 
 ```
-Copyright (c) 2015 Black Square Media
+Copyright (c) 2016 Black Square Media
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
