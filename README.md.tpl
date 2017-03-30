@@ -16,29 +16,11 @@ Full documentation is available on [GoDoc](http://godoc.org/github.com/bsm/bst)
 As a Set:
 
 ```go
-{
-	set := bst.NewSet(5)
-	set.Add(bst.Int(3))
-	set.Add(bst.Int(5))
-	set.Add(bst.Int(1))
-	set.Add(bst.Int(3))
-
-	for iter := set.Iterator(); iter.Next(); {
-		fmt.Println(iter.Value())
-	}
-}
+{{ "ExampleSet_Iterator" | code }}
 ```
 
 As a Map:
 
 ```go
-{
-	set := bst.NewMap(5)
-	set.Set(bst.Int(5), "bar")
-	set.Set(bst.Int(3), "foo")
-
-	for iter := set.Iterator(); iter.Next(); {
-		fmt.Println(iter.Key(), iter.Value())
-	}
-}
+{{ "ExampleMap_Iterator" | code }}
 ```

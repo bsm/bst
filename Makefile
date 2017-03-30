@@ -6,3 +6,6 @@ test:
 
 bench:
 	go test -test.run=NONE -test.bench=. -test.benchmem
+
+README.md: README.md.tpl $(wildcard *.go)
+	becca -package $(subst $(GOPATH)/src/,,$(PWD))

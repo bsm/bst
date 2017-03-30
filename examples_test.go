@@ -29,7 +29,7 @@ func ExampleSet_Add() {
 	// false
 }
 
-func ExampleSetIterator() {
+func ExampleSet_Iterator() {
 	set := bst.NewSet(5)
 	set.Add(bst.Int(3))
 	set.Add(bst.Int(5))
@@ -59,7 +59,7 @@ func ExampleMap() {
 	// <nil> false
 }
 
-func ExampleMapIterator() {
+func ExampleMap_Iterator() {
 	set := bst.NewMap(5)
 	set.Set(bst.Int(5), "bar")
 	set.Set(bst.Int(3), "foo")
