@@ -15,7 +15,7 @@ func (e entry) Equals(other Element) bool { return e.key.Equals(other.(entry).ke
 // from multiple goroutines.
 type Map struct{ elements }
 
-// New creates a map with a given capacity
+// NewMap creates a map with a given capacity
 func NewMap(capacity int) *Map { return &Map{elements: make(elements, 0, capacity)} }
 
 // Set adds a value on key, returns true if the key was already present and the value was replaced.
